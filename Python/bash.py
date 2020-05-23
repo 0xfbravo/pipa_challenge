@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
-
+font_style = {
+    "normal": '\\033[0m',
+    "bold": '\\033[1m'
+}
 
 color = {
     "no_color": '\\033[0m',
@@ -19,3 +22,12 @@ color = {
     "lightcyan": '\\033[1;36m',
     "white": '\\033[1;37m',
 }
+
+
+def style(text: str, bold: bool, color_name: str):
+    if bold:
+        text = font_style["bold"] + text
+
+    text = color[color_name] + text
+    text = text + font_style["normal"] + color["no_color"]
+    return text
