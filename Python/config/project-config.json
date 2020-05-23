@@ -1,0 +1,6 @@
+{
+  "moduleName": "messengermodule",
+  "modulePath": "../Android/messenger_module",
+  "appName": "app",
+  "appPath": "../Android/pipa_app"
+}
