@@ -1,11 +1,8 @@
 package br.com.pipa.messengemodule.core
 
+import android.content.Context
 import android.util.Log
 import br.com.pipa.messengemodule.model.Message
-import br.com.pipa.messengemodule.thirdparty.FacebookMessenger
-import br.com.pipa.messengemodule.thirdparty.Skype
-import br.com.pipa.messengemodule.thirdparty.Telegram
-import br.com.pipa.messengemodule.thirdparty.WhatsApp
 
 class MessengerFacade: MessengerAdapter {
 
@@ -13,28 +10,28 @@ class MessengerFacade: MessengerAdapter {
         private const val TAG = "MessengerFacade"
     }
 
-    override fun sendOnWhatsApp(destination: String, predefinedMessage: String?) {
+    override fun sendOnWhatsApp(context: Context, destination: String, predefinedMessage: String?) {
         val message = Message(destination, predefinedMessage)
         Log.d(TAG, "Sending $message on WhatsApp")
-        WhatsApp.sendMessage(message)
+        ThirdPartyFactory.whatsApp?.sendMessage(message)
     }
 
-    override fun sendOnTelegram(destination: String) {
+    override fun sendOnTelegram(context: Context, destination: String) {
         val message = Message(destination)
         Log.d(TAG, "Sending $message on Telegram")
-        Telegram.sendMessage(message)
+        ThirdPartyFactory.telegram?.sendMessage(message)
     }
 
-    override fun sendOnFbMessenger(destination: String) {
+    override fun sendOnFbMessenger(context: Context, destination: String) {
         val message = Message(destination)
         Log.d(TAG, "Sending $message on Facebook Messenger")
-        FacebookMessenger.sendMessage(message)
+        ThirdPartyFactory.facebookMessenger?.sendMessage(message)
     }
 
-    override fun sendOnSkype(destination: String) {
+    override fun sendOnSkype(context: Context, destination: String) {
         val message = Message(destination)
         Log.d(TAG, "Sending $message on Skype")
-        Skype.sendMessage(message)
+        ThirdPartyFactory.skype?.sendMessage(message)
     }
 
 }

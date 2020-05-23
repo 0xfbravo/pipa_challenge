@@ -1,13 +1,12 @@
 package br.com.pipa.messengemodule.thirdparty
 
-import br.com.pipa.messengemodule.core.Messenger
+import android.content.Context
+import android.net.Uri
 import br.com.pipa.messengemodule.model.Message
 
-internal object Skype: Messenger {
+internal class Skype(context: Context): AppMessenger(context, "") {
 
-    const val TAG = "Skype"
-
-    override fun sendMessage(message: Message) {
+    override fun getApiURL(message: Message): Uri {
         TODO("Not yet implemented")
     }
 

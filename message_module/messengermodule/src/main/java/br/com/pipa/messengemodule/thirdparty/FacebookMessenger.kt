@@ -1,13 +1,12 @@
 package br.com.pipa.messengemodule.thirdparty
 
-import br.com.pipa.messengemodule.core.Messenger
+import android.content.Context
+import android.net.Uri
 import br.com.pipa.messengemodule.model.Message
 
-internal object FacebookMessenger: Messenger {
+internal class FacebookMessenger(context: Context): AppMessenger(context, "") {
 
-    const val TAG = "FacebookMessenger"
-
-    override fun sendMessage(message: Message) {
+    override fun getApiURL(message: Message): Uri {
         TODO("Not yet implemented")
     }
 

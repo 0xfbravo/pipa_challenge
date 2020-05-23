@@ -1,10 +1,12 @@
 package br.com.pipa.messengemodule.core
 
+import android.content.Context
+
 interface MessengerAdapter {
 
-    fun sendOnWhatsApp(destination: String, predefinedMessage: String? = null)
-    fun sendOnTelegram(destination: String)
-    fun sendOnFbMessenger(destination: String)
-    fun sendOnSkype(destination: String)
+    fun sendOnWhatsApp(context: Context, destination: String, predefinedMessage: String? = null)
+    fun sendOnTelegram(context: Context, destination: String)
+    fun sendOnFbMessenger(context: Context, destination: String)
+    fun sendOnSkype(context: Context, destination: String)
 
 }
