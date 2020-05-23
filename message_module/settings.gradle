@@ -1,2 +1,2 @@
-rootProject.name='MessageModule'
+rootProject.name='MessengerModule'
 include ':messengermodule'

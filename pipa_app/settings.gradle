@@ -1,2 +1,2 @@
 rootProject.name='PipaApp'
-include ':app'
+include ':app', ':messengermodule'
