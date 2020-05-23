@@ -3,8 +3,9 @@ package br.com.pipa.messengemodule.thirdparty
 import br.com.pipa.messengemodule.core.Messenger
 import br.com.pipa.messengemodule.model.Message
 
-internal object FacebookMessenger:
-    Messenger {
+internal object FacebookMessenger: Messenger {
+
+    const val TAG = "FacebookMessenger"
 
     override fun sendMessage(message: Message) {
         TODO("Not yet implemented")
