@@ -1,6 +1,8 @@
 {
   "moduleName": "messengermodule",
   "modulePath": "../Android/messenger_module",
+  "moduleArtifactBuildPath": "../Android/messenger_module/messengermodule/build/outputs/aar/messengermodule-debug.aar",
+  "moduleArtifactDestinationPath": "../Android/pipa_app/messengermodule/messengermodule-debug.aar",
   "appName": "app",
   "appPath": "../Android/pipa_app"
 }
