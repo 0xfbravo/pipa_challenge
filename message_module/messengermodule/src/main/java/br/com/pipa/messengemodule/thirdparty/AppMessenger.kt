@@ -2,6 +2,7 @@ package br.com.pipa.messengemodule.thirdparty
 
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.util.Log
 import br.com.pipa.messengemodule.model.Message
@@ -32,7 +33,8 @@ internal abstract class AppMessenger(private val context: Context,
     private fun navigateToStore() {
         val intent = Intent(Intent.ACTION_VIEW)
         intent.apply {
-            data = Uri.parse("https://play.google.com/store/apps/details?id=$packageName")
+            data = Uri.parse("market://details?id=$packageName")
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK
         }
 
         Log.d(this::class.java.simpleName, "$packageName isn't installed, redirecting to Google Play...")
@@ -41,10 +43,8 @@ internal abstract class AppMessenger(private val context: Context,
 
     private fun isAppInstalled(): Boolean {
         return try {
-            val intent = Intent()
-            intent.setPackage(packageName)
-            val didResolve = intent.resolveActivity(context.packageManager) != null
-            didResolve
+            context.packageManager.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES)
+            true
         }
         catch (e : Exception) {
             e.printStackTrace()
