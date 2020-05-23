@@ -4,10 +4,10 @@ import android.content.Context
 import android.net.Uri
 import br.com.pipa.messengemodule.model.Message
 
-internal class FacebookMessenger(context: Context): AppMessenger(context, "") {
+internal class FacebookMessenger(context: Context): AppMessenger(context, "com.facebook.orca") {
 
     override fun getApiURL(message: Message): Uri {
-        TODO("Not yet implemented")
+        return Uri.parse("https://m.me/:${message.destination}")
     }
 
 }
