@@ -4,10 +4,10 @@ import android.content.Context
 import android.net.Uri
 import br.com.pipa.messengemodule.model.Message
 
-internal class Telegram(context: Context): AppMessenger(context, "") {
+internal class Telegram(context: Context): AppMessenger(context, "org.telegram.messenger") {
 
     override fun getApiURL(message: Message): Uri {
-        TODO("Not yet implemented")
+        return Uri.parse("http://telegram.me/${message.destination}")
     }
 
 }
