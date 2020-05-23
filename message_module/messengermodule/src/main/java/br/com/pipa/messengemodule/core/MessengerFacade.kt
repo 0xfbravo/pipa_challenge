@@ -10,28 +10,32 @@ class MessengerFacade: MessengerAdapter {
         private const val TAG = "MessengerFacade"
     }
 
-    override fun sendOnWhatsApp(context: Context, destination: String, predefinedMessage: String?) {
-        val message = Message(destination, predefinedMessage)
-        Log.d(TAG, "Sending $message on WhatsApp")
-        ThirdPartyFactory.whatsApp?.sendMessage(message)
-    }
-
-    override fun sendOnTelegram(context: Context, destination: String) {
-        val message = Message(destination)
-        Log.d(TAG, "Sending $message on Telegram")
-        ThirdPartyFactory.telegram?.sendMessage(message)
-    }
-
     override fun sendOnFbMessenger(context: Context, destination: String) {
         val message = Message(destination)
         Log.d(TAG, "Sending $message on Facebook Messenger")
-        ThirdPartyFactory.facebookMessenger?.sendMessage(message)
+        val facebookMessenger = ThirdPartyFactory.getFacebookMessenger(context)
+        facebookMessenger.sendMessage(message)
     }
 
     override fun sendOnSkype(context: Context, destination: String) {
         val message = Message(destination)
         Log.d(TAG, "Sending $message on Skype")
-        ThirdPartyFactory.skype?.sendMessage(message)
+        val skype = ThirdPartyFactory.getSkype(context)
+        skype.sendMessage(message)
+    }
+
+    override fun sendOnTelegram(context: Context, destination: String) {
+        val message = Message(destination)
+        Log.d(TAG, "Sending $message on Telegram")
+        val telegram = ThirdPartyFactory.getTelegram(context)
+        telegram.sendMessage(message)
+    }
+
+    override fun sendOnWhatsApp(context: Context, destination: String, predefinedMessage: String?) {
+        val message = Message(destination, predefinedMessage)
+        Log.d(TAG, "Sending $message on WhatsApp")
+        val whatsApp = ThirdPartyFactory.getWhatsApp(context)
+        whatsApp.sendMessage(message)
     }
 
 }

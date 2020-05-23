@@ -12,12 +12,12 @@ internal object ThirdPartyFactory {
 
     const val TAG = "ThirdPartyFactory"
 
-    var facebookMessenger: AppMessenger? = null
-    var skype: AppMessenger? = null
-    var telegram: AppMessenger? = null
-    var whatsApp: AppMessenger? = null
+    private var facebookMessenger: AppMessenger? = null
+    private var skype: AppMessenger? = null
+    private var telegram: AppMessenger? = null
+    private var whatsApp: AppMessenger? = null
 
-    fun createFacebookMessenger(context: Context): AppMessenger {
+    fun getFacebookMessenger(context: Context): AppMessenger {
         if (facebookMessenger != null)
             return facebookMessenger!!
 
@@ -26,7 +26,7 @@ internal object ThirdPartyFactory {
         return facebookMessenger!!
     }
 
-    fun createSkype(context: Context): AppMessenger {
+    fun getSkype(context: Context): AppMessenger {
         if (skype != null)
             return skype!!
 
@@ -35,7 +35,7 @@ internal object ThirdPartyFactory {
         return skype!!
     }
 
-    fun createTelegram(context: Context): AppMessenger {
+    fun getTelegram(context: Context): AppMessenger {
         if (telegram != null)
             return telegram!!
 
@@ -44,7 +44,7 @@ internal object ThirdPartyFactory {
         return telegram!!
     }
 
-    fun createWhatsApp(context: Context): AppMessenger {
+    fun getWhatsApp(context: Context): AppMessenger {
         if (whatsApp != null)
             return whatsApp!!
 
