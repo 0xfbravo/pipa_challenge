@@ -14,12 +14,7 @@ color = {
     "cyan": '\\033[0;36m',
     "lightgray": '\\033[0;37m',
     "darkgray": '\\033[1;30m',
-    "lightred": '\\033[1;31m',
-    "lightgreen": '\\033[1;32m',
     "yellow": '\\033[1;33m',
-    "lightblue": '\\033[1;34m',
-    "lightpurple": '\\033[1;35m',
-    "lightcyan": '\\033[1;36m',
     "white": '\\033[1;37m',
 }
 
@@ -31,3 +26,7 @@ def style(text: str, bold: bool, color_name: str):
     text = color[color_name] + text
     text = text + font_style["normal"] + color["no_color"]
     return text
+
+
+def divider():
+    return color["lightgray"] + "[---------------]" + color["no_color"]

@@ -1,8 +1,13 @@
 {
+  "toolsPath": "/Users/felipebravo/Library/Android/sdk/platform-tools",
+
   "moduleName": "messengermodule",
   "modulePath": "../Android/messenger_module",
-  "moduleArtifactBuildPath": "../Android/messenger_module/messengermodule/build/outputs/aar/messengermodule-debug.aar",
-  "moduleArtifactDestinationPath": "../Android/pipa_app/messengermodule/messengermodule-debug.aar",
+  "moduleBuildPath": "../Android/messenger_module/messengermodule/build/outputs/aar/messengermodule-debug.aar",
+  "moduleDestinationPath": "../Android/pipa_app/messengermodule/messengermodule-debug.aar",
+
   "appName": "app",
-  "appPath": "../Android/pipa_app"
+  "appPath": "../Android/pipa_app",
+  "appBuildPath": "../Android/pipa_app/app/build/outputs/apk/debug/app-debug.apk",
+  "appMainCanonicalPath": "br.com.pipa.pipaapp/br.com.pipa.pipaapp.MainActivity"
 }
