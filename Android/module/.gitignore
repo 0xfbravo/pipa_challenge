@@ -12,11 +12,3 @@
 /captures
 .externalNativeBuild
 .cxx
-
-pipa_app/messengermodule/build/.transforms/
-
-Android/pipa_app/messengermodule/build/.transforms/
-
-Python/__pycache__/
-
-Python/config/__pycache__/
