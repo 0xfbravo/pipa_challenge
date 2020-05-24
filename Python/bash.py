@@ -24,9 +24,9 @@ def style(text: str, bold: bool, color_name: str):
         text = font_style["bold"] + text
 
     text = color[color_name] + text
-    text = text + font_style["normal"] + color["no_color"]
+    text = text + color["no_color"] + font_style["normal"]
     return text
 
 
 def divider():
-    return color["lightgray"] + "[---------------]" + color["no_color"]
+    return font_style["bold"] + color["lightgray"] + "<===============>" + color["no_color"] + font_style["normal"]
